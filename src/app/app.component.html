@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h1>Proyecto</h1>
+  <h2>Exportar datos a una columna</h2>
+  <p>Exporte los datos de un excel hasta una fila llena de asteriscos </p>
+
+  <label class="custom-file">
+    <input type="file" id="file" class="custom-file-input" (change)="eventoCuandoCambieArchivo($event)" multiple="false">
+    <span class="custom-file-control btn btn-info" style="background-color:#32a1ff;color: white; ">Elegir archivos</span>
+  </label>
+  <br>
+  <br>
+  <h3 *ngIf="datosExcel.length!=0"> Datos en el excel:</h3>
+  <br>
+  <table class="table table-striped sjs-table">
+    <tr *ngFor="let fila of datosExcel">
+      <td *ngFor="let valorColumna of fila">
+        {{valorColumna}}
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <button class="btn btn-outline-primary" (click)="export()">Exportar los datos</button>
+
+</div>
+
+
