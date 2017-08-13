@@ -188,10 +188,21 @@ var AppComponent = (function () {
         }
         var datosFinales = [];
         console.log(this.datosExcel);
+        console.log(columna);
+        datosFinales.push(columna);
+        console.log('datosFinales', datosFinales);
+        var contador = 0;
+        var arreglo2 = [];
         columna.forEach(function (valor, indice) {
-            datosFinales[indice] = valor;
+            var arreglo = [];
+            arreglo.push(valor);
+            arreglo2.push(arreglo);
+            // console.log(arreglo.push(valor));
+            // datosFinales[indice]=
+            contador++;
         });
-        var hojaDeTrabajoNuevaValoresUnaFila = __WEBPACK_IMPORTED_MODULE_1_xlsx__["utils"].aoa_to_sheet(datosFinales);
+        console.log(arreglo2);
+        var hojaDeTrabajoNuevaValoresUnaFila = __WEBPACK_IMPORTED_MODULE_1_xlsx__["utils"].aoa_to_sheet(arreglo2);
         /* generate workbook and add the worksheet */
         var excelNuevo = __WEBPACK_IMPORTED_MODULE_1_xlsx__["utils"].book_new();
         __WEBPACK_IMPORTED_MODULE_1_xlsx__["utils"].book_append_sheet(excelNuevo, hojaDeTrabajoNuevaValoresUnaFila, 'Datos en una Fila');
