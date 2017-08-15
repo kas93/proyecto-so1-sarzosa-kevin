@@ -181,7 +181,7 @@ var AppComponent = (function () {
         for (var i = 0; i < letras.length; i++) {
             for (var j = 0; j < numeroMayor; j++) {
                 var celda = hojaDeTrabajoNueva[letras[i] + (j + 1).toString()];
-                if (celda.v != '*' && j != 0) {
+                if (celda.v != '*') {
                     columna.push(celda.v);
                 }
             }
